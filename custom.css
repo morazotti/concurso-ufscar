@@ -1,0 +1,4 @@
+/* Set transparency for list items created with '-' */
+.reveal ol li {
+    opacity: 0; /* Adjust the opacity value as needed */
+}

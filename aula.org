@@ -1,0 +1,515 @@
+#+title: Oscilador Harmônico Simples
+#+author: Nícolas Morazotti
+#+email: nicolas.morazotti@gmail.com
+#+date: 2025/01/28 Ter
+#+property: header_args:jupyter-python :eval never-export
+#+language: pt
+#+latex_header: \usepackage[brazil]{babel}
+#+latex_header: \usepackage{minted}
+#+latex_header: \usemintedstyle{emacs}
+#+latex_header: \setminted[python]{framesep=1.5mm, linenos, firstnumber=last}
+
+#+options: H:2 ':t toc:nil timestamp:nil num:nil reveal_width:3840 reveal_height:2160
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_THEME: solarized 
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_TITLE_SLIDE: <h2 class="title">%t</h2>
+#+REVEAL_TITLE_SLIDE: <p class="subtitle"></p> <h3 class="author">%a</h3>
+#+REVEAL_TITLE_SLIDE: <h3 class="date">%d</h3> 
+# #+REVEAL_TITLE_SLIDE: <div id="org4eba3d0" class="figure"> <p><img src="img/BlackGenn_Dark.png" alt="BlackGenn_Dark.png" width="500px" /> </p> </div>
+#+REVEAL_MARGIN: 0.02
+#+REVEAL_INIT_OPTIONS: slideNumber:"c/t"
+#+REVEAL_MIN_SCALE: 0.5 
+#+REVEAL_MAX_SCALE: 35 
+#+REVEAL_EXTRA_CSS: custom.css
+:END:
+
+* Exemplos
+** Relógio de pêndulo
+\(T=2\pi \sqrt{\frac{\ell}{g}}\)
+#+begin_export html
+<section>
+  <video controls width="1080" height="360">
+    <source src="src/media/videos/manim_pendulum/1080p60/OscillatingPendulum.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+#+end_export
+** Circuitos RLC 
+** Ponte do Estreito de Tacoma
+* O movimento harmônico simples
+** Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+ATTR_REVEAL: :frag (appear) :frag_idx (1)
+- \(F = ma = -kx\)
+
+[[file:img/ohs.png]]
+
+** Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+  
+#+ATTR_REVEAL: :frag (appear) :frag_idx (1)
+- \(F = ma = -kx\)
+
+[[file:img/ohs-off.png]]
+** Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+ATTR_REVEAL: :frag (none none appear) :frag_idx (- - 3)
+- \(F = ma = -kx\)
+- \( m\ddot{x} + kx = 0 \)
+- \(\ddot{x} + \frac{k}{m}x= 0\)
+
+** COMMENT Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+ATTR_REVEAL: :frag (none appear) :frag_idx (- 2)
+- \(\ddot{x} + \frac{k}{m}x= 0\)
+- \(\ddot{x} \propto x\)
+
+
+** Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+\(\ddot{x} + \frac{k}{m}x= 0\)\\
+Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+
+** Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+\(\ddot{x} + \frac{k}{m}x= 0\)\\
+Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+
+\(\frac{\mathrm{d}^2}{\mathrm{dt}^2}(ax_1 + bx_2) + \frac{k}{m}(ax_1 + bx_2)\)
+** Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+\(\ddot{x} + \frac{k}{m}x= 0\)\\
+Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+
+\(=a\left( \ddot{x}_1 + \frac{k}{m}x_1 \right) + b \left( \ddot{x}_2 + \frac{k}{m}x_2 \right) \)
+** Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+\(\ddot{x} + \frac{k}{m}x= 0\)\\
+Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+
+\(=a\underbrace{\left( \ddot{x}_1 + \frac{k}{m}x_1 \right)}_{\equiv 0} + b \underbrace{\left( \ddot{x}_2 + \frac{k}{m}x_2 \right)}_{\equiv 0}  \)
+
+** Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+\(\ddot{x} + \frac{k}{m}x= 0\)\\
+Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+
+\(\equiv 0\)
+** Solução
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+\(\ddot{x} + \frac{k}{m}x= 0\)
+
+\(x(t) = \cos(rt)\) é uma possível solução para \(\ddot{x} = cx\), a
+encontrar \(c\). Da
+mesma maneira, \(x(t) = \sin(rt)\) também é uma solução.
+
+\(\implies x(t) = \alpha\cos(rt) + \beta\sin(rt)\)
+
+** \(x(t) = \alpha\cos(rt) + \beta\sin(rt)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+** \(x(t) = \alpha\cos(rt) + \beta\sin(rt)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Diferenciando \(x(t)\),
+
+\(\dot{x}(t) = -\alpha r\sin(rt) + \beta r\cos(rt)\)
+
+** \(x(t) = \alpha \cos(rt) + \beta \sin(rt)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Diferenciando \(x(t)\),
+
+\(\ddot{x}(t) = -\alpha r^2\cos(rt) - \beta r^2\sin(rt) = -r^2x(t)\)
+
+** \(x(t) = \alpha \cos(rt) + \beta \sin(rt)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Diferenciando \(x(t)\),
+
+\(-r^2 x(t) = -\frac{k}{m}x(t)\)
+
+
+** \(x(t) = \alpha \cos(rt) + \beta \sin(rt)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Diferenciando \(x(t)\),
+
+\(r = \sqrt{\frac{k}{m}} \equiv \omega\)
+
+** \(x(t) = \alpha \cos(\omega t) + \beta \sin(\omega t)\)
+* Constantes do sistema
+** Frequência
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+A constante \(\omega\) é chamada de *frequência natural de oscilação*.
+\begin{align*}
+\omega = \sqrt{\frac{k}{m}}
+\end{align*}
+
+Depende somente de propriedades da massa e da mola.
+
+** Frequência
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+O movimento é dito *harmônico* quando a frequência não depende do
+tempo. Uma mola muito distendida ou um pêndulo que inicia numa posição
+muito alta descrevem movimentos oscilatórios, mas *não harmônicos*.
+** Período
+\begin{align*}
+x \left( t+\frac{2\pi}{\omega} \right) &= \alpha\cos(\omega t + 2\pi) + \beta\sin(\omega t + 2\pi)\\
+&= \alpha\cos(\omega t) + \beta\sin(\omega t) = x(t)
+\end{align*}
+
+\(T\equiv \frac{2\pi}{\omega}\) é chamado de *período de oscilação*, e é
+o tempo que a massa leva entre chegar na mesma posição com mesma velocidade.
+
+**  
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 700
+[[file:img/x_ampli_phase.png]]
+**  
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 700
+[[file:img/x_change_freq.png]]
+
+** Constantes arbitrárias
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Para identificar \(\alpha \) e \(\beta \), precisamos das *condições
+iniciais*. Segunda ordem \(\leftrightarrow\) duas condições.
+
+** Constantes arbitrárias
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
+
+\(x(t) = \alpha \cos(\omega t) + \beta \sin(\omega t)\)
+** Constantes arbitrárias
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
+
+\(x(0) = \alpha \cos(\omega 0) + \beta \sin(\omega 0)\)
+** Constantes arbitrárias
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
+
+\(x_0 = \alpha \)
+** Constantes arbitrárias
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
+
+\(\dot{x}(t) = -\omega \alpha \sin(\omega t) + \omega \beta \cos(\omega t)\)
+** Constantes arbitrárias
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
+
+\(\dot{x}(0) = -\omega \alpha \sin(\omega 0) + \omega \beta \cos(\omega 0)\)
+** Constantes arbitrárias
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
+
+\(v_0 = \omega \beta\)
+** \(x(t) = x_0 \cos(\omega t) + \frac{v_0}{\omega}\sin(\omega t)\)
+* Expressão alternativa
+** Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Há uma maneira mais instrutiva e compacta de escrever a solução.
+
+\(x(t) = \alpha  \cos(\omega t) + \beta  \sin(\omega t)\)
+** Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+\(x(t) = \alpha  \cos(\omega t) + \beta  \sin(\omega t)\)
+** Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+\(x(t) = \frac{\sqrt{\alpha ^2+\beta ^2}}{\sqrt{\alpha ^2+\beta ^2}}\cdot\left[ \alpha  \cos(\omega t) + \beta \sin(\omega t) \right]\)
+
+** COMMENT Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+\(x(t) = \sqrt{\alpha ^2+\beta ^2} \left[ \frac{\alpha}{\sqrt{\alpha^2+\beta^2}} \cos(\omega t) + \frac{\beta}{\sqrt{\alpha ^2+\beta ^2}} \sin(\omega t) \right]\)
+
+** Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+\(x(t) = \underbrace{\sqrt{\alpha ^2+\beta ^2}}_{\equiv A} \left[ \frac{\alpha}{\sqrt{\alpha^2+\beta^2}} \cos(\omega t) + \frac{\beta}{\sqrt{\alpha ^2+\beta ^2}} \sin(\omega t) \right]\)
+
+** Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+\(x(t) = A \left[ \frac{\alpha}{A} \cos(\omega t) + \frac{\beta}{A} \sin(\omega t) \right]\)
+
+** Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+\(x(t) = A \left[ \frac{\alpha}{A} \cos(\omega t) + \frac{\beta}{A} \sin(\omega t) \right]\)
+
+\(\left( \frac{\alpha}{A} \right)^2 + \left( \frac{\beta}{A} \right)^2
+= \frac{\alpha^2 + \beta^2}{A^2} \equiv 1\)
+
+\(\frac{\alpha}{A} = \cos(\varphi),\frac{\beta}{A} = -\sin(\varphi)\)
+** Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+\(x(t) = A \left[ \cos(\varphi) \cos(\omega t) - \sin(\varphi) \sin(\omega t) \right]\)
+
+** Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+\(x(t) = A \cos(\omega t + \varphi)\)
+
+** COMMENT \(x(t) = A \cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+\(A\) é chamada *amplitude*, e é a extensão máxima da mola. 
+\(\varphi\) é chamada *fase*, e mostra a partir de qual ponto a curva
+cossenoidal começa em comparação a uma mola distendida de \(A\).
+** \(x(t) = A \cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+
+#+attr_html: :width 600
+[[file:img/x_ampli_phase.png]]
+
+** \(x(t) = A \cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+\(A\) é chamada de *amplitude*.
+#+attr_html: :width 600
+[[file:img/x_change_ampli.png]]
+** \(x(t) = A \cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+\(\varphi\) é chamada de *fase*.
+
+#+attr_html: :width 600
+[[file:img/x_change_phase.png]]
+
+
+* Energia do sistema
+
+** \(x(t) = A\cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Podemos calcular a energia do sistema como
+
+\begin{align*}
+E = \frac{m\dot{x}^2}{2} + \frac{kx^2}{2}
+\end{align*}
+
+** \(x(t) = A\cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Podemos calcular a energia do sistema como
+
+\begin{align*}
+\omega^2 &= \frac{k}{m} \implies k = m\omega^2\\
+E &= \frac{m\dot{x}^2}{2} + \frac{m\omega^2x^2}{2}
+\end{align*}
+** \(x(t) = A\cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Podemos calcular a energia do sistema como
+
+\begin{align*}
+E &= \frac{m\dot{x}^2}{2} + \frac{m\omega^2x^2}{2}\\
+\dot{x}(t) &= -A\omega\sin(\omega t + \varphi)
+\end{align*}
+** \(x(t) = A\cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Podemos calcular a energia do sistema como
+
+\(E = \frac{m}{2}[-A\omega\sin(\omega t+\varphi)]^2 +
+\frac{m\omega^2}{2}[A\cos(\omega t + \varphi)]^2\)
+** \(x(t) = A\cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Podemos calcular a energia do sistema como
+\begin{align*}
+E = \frac{m\omega^2A^2}{2} [\sin(\omega t+\varphi)^2 + \cos(\omega t + \varphi)^2]
+\end{align*}
+** \(x(t) = A\cos(\omega t + \varphi)\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Podemos calcular a energia do sistema como
+\begin{align*}
+E = \frac{m\omega^2A^2}{2}.
+\end{align*}
+** \(E = \frac{m\omega^2A^2}{2}\)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Como \(A^2 = x_0^2 + \frac{v_0^2}{\omega^2}\), concluímos que
+\begin{align*}
+E = \frac{mv_0^2}{2}+ \frac{m\omega^2x_0^2}{2}
+\end{align*}
+\(\implies\) a energia se conserva.
+
+** Energia do oscilador harmônico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 600
+[[file:img/energy.png]]
+
+* Pêndulo inextensível
+
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 600
+[[file:img/pendulum_nof.png]]
+
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 600
+[[file:img/pendulum.png]]
+
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+A tensão equilibra a componente radial da força:
+\begin{align*}
+T = mg\cos\theta
+\end{align*}
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+A componente perpendicular é a força resultante:
+
+\begin{align*}
+ma = -mg\sin\theta
+\end{align*}
+
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+A componente perpendicular é a força resultante:
+
+\begin{align*}
+m\ell\ddot{\theta} = -mg\sin\theta
+\end{align*}
+
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Para pequenos ângulos, \(\sin\theta\approx\theta\)
+#+begin_framed
+\begin{align*}
+\ddot{\theta} + \frac{g}{\ell}\theta = 0
+\end{align*}
+#+end_framed
+Equivalente a
+\begin{align*}
+\ddot{x} + \frac{k}{m}x = 0
+\end{align*}
+
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Solução harmônica!
+\begin{align*}
+\theta(t) &= A \cos(\omega t + \varphi)\\
+\omega &= \sqrt{\frac{g}{\ell}}, T = 2\pi \sqrt{\frac{\ell}{g}}
+\end{align*}
+
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Solução aproximada boa para ângulos pequenos!
+#+attr_html: :width 600
+[[file:img/nonlinear_pendulum_close.png]]
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Solução exata diferere para ângulos grandes!
+#+attr_html: :width 600
+[[file:img/nonlinear_pendulum_far.png]]
