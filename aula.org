@@ -37,7 +37,15 @@
 </section>
 #+end_export
 ** Circuitos RLC 
+#+ATTR_HTML: :width 600
+[[file:img/rlc.png]]
 ** Ponte do Estreito de Tacoma
+#+begin_export html
+<iframe width="640" height="360" src="https://www.youtube.com/embed/XggxeuFDaDU" frameborder="0" allowfullscreen></iframe>
+#+end_export
+Oscilações resultam do fenômeno /flutter aeroelástico/. Billah, K.; R. Scanlan (1991). 
+
+
 * O movimento harmônico simples
 ** COMMENT Sistema
 :PROPERTIES:
@@ -49,9 +57,6 @@
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-#+ATTR_REVEAL: :frag (appear) :frag_idx (1)
-- \(F = ma = -kx\)
-
 [[file:img/ohs.png]]
 
 ** Sistema
@@ -86,14 +91,14 @@
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 \(\ddot{x} + \frac{k}{m}x= 0\)\\
-Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+Se \(x_1\), \(x_2\) são soluções, então
 
 ** Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 \(\ddot{x} + \frac{k}{m}x= 0\)\\
-Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+Se \(x_1\), \(x_2\) são soluções, então
 
 \(\frac{\mathrm{d}^2}{\mathrm{dt}^2}(ax_1 + bx_2) + \frac{k}{m}(ax_1 + bx_2)\)
 ** Sistema linear
@@ -101,7 +106,7 @@ Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 \(\ddot{x} + \frac{k}{m}x= 0\)\\
-Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+Se \(x_1\), \(x_2\) são soluções, então
 
 \(=a\left( \ddot{x}_1 + \frac{k}{m}x_1 \right) + b \left( \ddot{x}_2 + \frac{k}{m}x_2 \right) \)
 ** Sistema linear
@@ -109,7 +114,7 @@ Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 \(\ddot{x} + \frac{k}{m}x= 0\)\\
-Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+Se \(x_1\), \(x_2\) são soluções, então
 
 \(=a\underbrace{\left( \ddot{x}_1 + \frac{k}{m}x_1 \right)}_{\equiv 0} + b \underbrace{\left( \ddot{x}_2 + \frac{k}{m}x_2 \right)}_{\equiv 0}  \)
 
@@ -118,7 +123,7 @@ Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 \(\ddot{x} + \frac{k}{m}x= 0\)\\
-Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
+Se \(x_1\), \(x_2\) são soluções, então
 
 \(\equiv 0\)
 ** Solução
@@ -409,7 +414,7 @@ Podemos calcular a energia do sistema como
 :END:
 Podemos calcular a energia do sistema como
 \begin{align*}
-E = \frac{m\omega^2A^2}{2} [\sin(\omega t+\varphi)^2 + \cos(\omega t + \varphi)^2]
+E = \frac{m\omega^2A^2}{2} [\sin^2(\omega t+\varphi) + \cos^2(\omega t + \varphi)]
 \end{align*}
 ** \(x(t) = A\cos(\omega t + \varphi)\)
 :PROPERTIES:
@@ -527,3 +532,17 @@ Solução exata diferere para ângulos grandes!
 Solução exata diferere para ângulos grandes!
 #+attr_html: :width 600
 [[file:img/nonlinear_pendulum_upsidedown.png]]
+
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Solução exata diferere para ângulos grandes!
+#+begin_export html
+<section>
+  <video controls width="1080" height="360">
+    <source src="src/media/videos/manim_pendulum/1080p60/DoublePendulumComparison.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+#+end_export

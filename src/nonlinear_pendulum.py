@@ -110,7 +110,7 @@ ax.set_title(
 )
 plt.savefig("../img/nonlinear_pendulum_far.png", transparent=transparency)
 
-theta0, omega0 = 0.99*np.pi, 0
+theta0, omega0 = 5*np.pi/6, 0
 nontheta = Pendulum(L, theta0, omega0, True).solve_ode()
 theta = Pendulum(L, theta0, omega0, False)
 w = theta.w_approx
