@@ -10,12 +10,9 @@ v0, x0 = -w*A*np.sin(phi), A*np.cos(phi)
 t = np.linspace(0, 4*np.pi/w, 100)
 
 
-time, theta, omega = euler_method(1, 1, np.pi/6, 0, 4*np.pi/w, t[1] - t[0])
-
-
 def set_ticks(plot, energy = False):
-    plot.xticks([i*0.5*np.pi for i in range(9)], ['0', r'$\frac{\pi}{2}$', r'$\pi$', r'$\frac{3\pi}{2}$', r'$2\pi$', r'$\frac{5\pi}{2}$', r'$3\pi$', r'$\frac{7\pi}{2}$', r'$4\pi$'])
-    plot.xlabel(r'$\omega t$')
+    plot.xticks([i*0.5*np.pi for i in range(9)], ['0', r'$T/4$', r'$T/2$', r'$3T/4$', r'$T$', r'$5T/4$', r'$3T/2$', r'$7T/4$', r'$2T$'])
+    plot.xlabel(r'$t$')
     if not energy:
         plot.yticks([-1, 0, 1], ['-A', '0', 'A'])
         plot.ylabel(r'$x(t)$')
@@ -84,9 +81,3 @@ ax.plot(t, T, color='palevioletred', label='Energia cinética')
 ax.plot(t, E, color='seagreen', label='Energia total')
 ax.legend(loc='upper right', fontsize=8)
 plt.savefig('../img/energy.png', transparent=transparency)
-
-fig, ax = plt.subplots(dpi=dpi)
-set_ticks(plt)
-ax.plot(t[1:], theta, color='steelblue')
-ax.legend(loc='upper right', fontsize=8)
-plt.savefig('../img/pendulum-nonlinear.png', transparent=transparency)

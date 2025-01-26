@@ -39,6 +39,12 @@
 ** Circuitos RLC 
 ** Ponte do Estreito de Tacoma
 * O movimento harmônico simples
+** COMMENT Sistema
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+ATTR_HTML: :width 400
+[[file:img/massa_mola_melhorada.gif]]
 ** Sistema
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
@@ -75,14 +81,14 @@
 - \(\ddot{x} \propto x\)
 
 
-** Sistema
+** Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 \(\ddot{x} + \frac{k}{m}x= 0\)\\
 Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
 
-** Sistema
+** Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -90,7 +96,7 @@ Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
 Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
 
 \(\frac{\mathrm{d}^2}{\mathrm{dt}^2}(ax_1 + bx_2) + \frac{k}{m}(ax_1 + bx_2)\)
-** Sistema
+** Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -98,7 +104,7 @@ Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
 Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
 
 \(=a\left( \ddot{x}_1 + \frac{k}{m}x_1 \right) + b \left( \ddot{x}_2 + \frac{k}{m}x_2 \right) \)
-** Sistema
+** Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -107,7 +113,7 @@ Equação *linear*: se \(x_1\), \(x_2\) são soluções, então
 
 \(=a\underbrace{\left( \ddot{x}_1 + \frac{k}{m}x_1 \right)}_{\equiv 0} + b \underbrace{\left( \ddot{x}_2 + \frac{k}{m}x_2 \right)}_{\equiv 0}  \)
 
-** Sistema
+** Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -513,3 +519,11 @@ Solução aproximada boa para ângulos pequenos!
 Solução exata diferere para ângulos grandes!
 #+attr_html: :width 600
 [[file:img/nonlinear_pendulum_far.png]]
+
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Solução exata diferere para ângulos grandes!
+#+attr_html: :width 600
+[[file:img/nonlinear_pendulum_upsidedown.png]]

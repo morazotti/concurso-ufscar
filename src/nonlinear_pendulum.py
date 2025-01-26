@@ -8,25 +8,23 @@ dpi = 300
 color = "#586e75"
 
 
-def set_ticks(plot, energy=False):
+def set_ticks(plot):
     plot.xticks(
         [i * 0.5 * np.pi for i in range(9)],
         [
             "0",
-            r"$\frac{\pi}{2}$",
-            r"$\pi$",
-            r"$\frac{3\pi}{2}$",
-            r"$2\pi$",
-            r"$\frac{5\pi}{2}$",
-            r"$3\pi$",
-            r"$\frac{7\pi}{2}$",
-            r"$4\pi$",
+            r"$T/4$",
+            r"$T/2$",
+            r"$3T/4$",
+            r"$T$",
+            r"$5T/4$",
+            r"$3T/2$",
+            r"$7T/4$",
+            r"$2T$",
         ],
     )
-    plot.xlabel(r"$\omega t$")
-    # if not energy:
-    #     plot.yticks([-1, 0, 1], ['-A', '0', 'A'])
-    #     plot.ylabel(r'$x(t)$')
+    plot.xlabel(r"$t$")
+    plot.ylabel(r"$\theta$ (rad)")
     # set frame color
     plot.gca().spines["top"].set_color("none")
     plot.gca().spines["right"].set_color("none")
@@ -83,12 +81,14 @@ fig, ax = plt.subplots(dpi=dpi)
 set_ticks(plt)
 # ax.plot(t, A*np.sin(w*t + phi), color='steelblue', label=r'$\varphi = $'+f'{phi:.2f}')
 ax.plot(t, nontheta(t), color="palevioletred", label="Solução exata")
-ax.plot(t, theta(t), color="steelblue",  label="Solução aproximada", linestyle="--")
+ax.plot(t, theta(t), color="steelblue", label="Solução aproximada", linestyle="--")
 ax.legend(loc="upper right", fontsize=8)
 ax.set_title(
-    r"Pêndulo não-linear, $\theta_0 = {:.2f}^\circ, \omega_0 = {:.2f}$".format(180*theta0/np.pi, omega0)
+    r"Pêndulo não-linear, $\theta_0 = {:.2f}^\circ, \omega_0 = {:.2f}$".format(
+        180 * theta0 / np.pi, omega0
+    )
 )
-plt.savefig('../img/nonlinear_pendulum_close.png', transparent=transparency)
+plt.savefig("../img/nonlinear_pendulum_close.png", transparent=transparency)
 
 theta0, omega0 = np.pi / 3, 0
 nontheta = Pendulum(L, theta0, omega0, True).solve_ode()
@@ -101,9 +101,31 @@ fig, ax = plt.subplots(dpi=dpi)
 set_ticks(plt)
 # ax.plot(t, A*np.sin(w*t + phi), color='steelblue', label=r'$\varphi = $'+f'{phi:.2f}')
 ax.plot(t, nontheta(t), color="palevioletred", label="Solução exata")
-ax.plot(t, theta(t), color="steelblue",  label="Solução aproximada", linestyle="--")
+ax.plot(t, theta(t), color="steelblue", label="Solução aproximada", linestyle="--")
 ax.legend(loc="upper right", fontsize=8)
 ax.set_title(
-    r"Pêndulo não-linear, $\theta_0 = {:.2f}^\circ, \omega_0 = {:.2f}$".format(180*theta0/np.pi, omega0)
+    r"Pêndulo não-linear, $\theta_0 = {:.2f}^\circ, \omega_0 = {:.2f}$".format(
+        180 * theta0 / np.pi, omega0
+    )
 )
-plt.savefig('../img/nonlinear_pendulum_far.png', transparent=transparency)
+plt.savefig("../img/nonlinear_pendulum_far.png", transparent=transparency)
+
+theta0, omega0 = 0.99*np.pi, 0
+nontheta = Pendulum(L, theta0, omega0, True).solve_ode()
+theta = Pendulum(L, theta0, omega0, False)
+w = theta.w_approx
+theta = theta.solve_ode()
+t = np.linspace(0, 4 * np.pi / w, 100)
+
+fig, ax = plt.subplots(dpi=dpi)
+set_ticks(plt)
+# ax.plot(t, A*np.sin(w*t + phi), color='steelblue', label=r'$\varphi = $'+f'{phi:.2f}')
+ax.plot(t, nontheta(t), color="palevioletred", label="Solução exata")
+ax.plot(t, theta(t), color="steelblue", label="Solução aproximada", linestyle="--")
+ax.legend(loc="upper right", fontsize=8)
+ax.set_title(
+    r"Pêndulo não-linear, $\theta_0 = {:.2f}^\circ, \omega_0 = {:.2f}$".format(
+        180 * theta0 / np.pi, omega0
+    )
+)
+plt.savefig("../img/nonlinear_pendulum_upsidedown.png", transparent=transparency)
