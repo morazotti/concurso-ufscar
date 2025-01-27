@@ -23,6 +23,7 @@
 #+REVEAL_MIN_SCALE: 0.5 
 #+REVEAL_MAX_SCALE: 35 
 #+REVEAL_EXTRA_CSS: custom.css
+#+REVEAL_EXTRA_SCRIPT_SRC: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 :END:
 
 * Exemplos
@@ -86,14 +87,14 @@ Oscilações resultam do fenômeno /flutter aeroelástico/. Billah, K.; R. Scanl
 - \(\ddot{x} \propto x\)
 
 
-** Sistema linear
+** COMMENT Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 \(\ddot{x} + \frac{k}{m}x= 0\)\\
 Se \(x_1\), \(x_2\) são soluções, então
 
-** Sistema linear
+** COMMENT Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -101,7 +102,7 @@ Se \(x_1\), \(x_2\) são soluções, então
 Se \(x_1\), \(x_2\) são soluções, então
 
 \(\frac{\mathrm{d}^2}{\mathrm{dt}^2}(ax_1 + bx_2) + \frac{k}{m}(ax_1 + bx_2)\)
-** Sistema linear
+** COMMENT Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -109,7 +110,7 @@ Se \(x_1\), \(x_2\) são soluções, então
 Se \(x_1\), \(x_2\) são soluções, então
 
 \(=a\left( \ddot{x}_1 + \frac{k}{m}x_1 \right) + b \left( \ddot{x}_2 + \frac{k}{m}x_2 \right) \)
-** Sistema linear
+** COMMENT Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -118,7 +119,7 @@ Se \(x_1\), \(x_2\) são soluções, então
 
 \(=a\underbrace{\left( \ddot{x}_1 + \frac{k}{m}x_1 \right)}_{\equiv 0} + b \underbrace{\left( \ddot{x}_2 + \frac{k}{m}x_2 \right)}_{\equiv 0}  \)
 
-** Sistema linear
+** COMMENT Sistema linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -130,20 +131,27 @@ Se \(x_1\), \(x_2\) são soluções, então
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-\(\ddot{x} + \frac{k}{m}x= 0\)
+#+ATTR_REVEAL: :frag (none appear appear) :frag_idx (- 2 3)
+- \(\ddot{x} + \frac{k}{m}x= 0\)
+- \(x(t) = \cos \left( \sqrt{\frac{k}{m}}t \right)\)?
+- \(x(t) = \sin \left( \sqrt{\frac{k}{m}}t \right)\)?
 
-\(x(t) = \cos(rt)\) é uma possível solução para \(\ddot{x} = cx\), a
-encontrar \(c\). Da
-mesma maneira, \(x(t) = \sin(rt)\) também é uma solução.
+# \(\implies x(t) = \alpha\cos(rt) + \beta\sin(rt)\)
 
-\(\implies x(t) = \alpha\cos(rt) + \beta\sin(rt)\)
+** Solução
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+ATTR_REVEAL: :frag (none none) :frag_idx (- -)
+- \(\ddot{x} + \frac{k}{m}x= 0\)
+- \(x(t) = \alpha\cos \left( \sqrt{\frac{k}{m}}t \right) + \beta\sin\left( \sqrt{\frac{k}{m}}t \right)\)
 
-** \(x(t) = \alpha\cos(rt) + \beta\sin(rt)\)
+** COMMENT \(x(t) = \alpha\cos(rt) + \beta\sin(rt)\)
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 
-** \(x(t) = \alpha\cos(rt) + \beta\sin(rt)\)
+** COMMENT \(x(t) = \alpha\cos(rt) + \beta\sin(rt)\)
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -151,7 +159,7 @@ Diferenciando \(x(t)\),
 
 \(\dot{x}(t) = -\alpha r\sin(rt) + \beta r\cos(rt)\)
 
-** \(x(t) = \alpha \cos(rt) + \beta \sin(rt)\)
+** COMMENT \(x(t) = \alpha \cos(rt) + \beta \sin(rt)\)
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -159,7 +167,7 @@ Diferenciando \(x(t)\),
 
 \(\ddot{x}(t) = -\alpha r^2\cos(rt) - \beta r^2\sin(rt) = -r^2x(t)\)
 
-** \(x(t) = \alpha \cos(rt) + \beta \sin(rt)\)
+** COMMENT \(x(t) = \alpha \cos(rt) + \beta \sin(rt)\)
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -168,7 +176,7 @@ Diferenciando \(x(t)\),
 \(-r^2 x(t) = -\frac{k}{m}x(t)\)
 
 
-** \(x(t) = \alpha \cos(rt) + \beta \sin(rt)\)
+** COMMENT \(x(t) = \alpha \cos(rt) + \beta \sin(rt)\)
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -176,35 +184,44 @@ Diferenciando \(x(t)\),
 
 \(r = \sqrt{\frac{k}{m}} \equiv \omega\)
 
-** \(x(t) = \alpha \cos(\omega t) + \beta \sin(\omega t)\)
+** COMMENT \(x(t) = \alpha \cos(\omega t) + \beta \sin(\omega t)\)
 * Constantes do sistema
 ** Frequência
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-A constante \(\omega\) é chamada de *frequência natural de oscilação*.
+\(\omega\) é chamada de *frequência natural de oscilação*.
 \begin{align*}
 \omega = \sqrt{\frac{k}{m}}
 \end{align*}
 
-Depende somente de propriedades da massa e da mola.
-
-** Frequência
+Depende somente de propriedades da massa e da mola. 
+\(x(t) = \alpha \cos(\omega t) + \beta \sin(\omega t)\)
+** Harmônico
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 
-O movimento é dito *harmônico* quando a frequência não depende do
-tempo. Uma mola muito distendida ou um pêndulo que inicia numa posição
-muito alta descrevem movimentos oscilatórios, mas *não harmônicos*.
+- O movimento é dito *harmônico* \(\leftrightarrow \omega\) não depende do tempo.
+- Uma mola muito distendida ou um pêndulo que inicia numa posição muito alta descrevem movimentos oscilatórios, mas *não harmônicos*.
 ** Período
-\begin{align*}
-x \left( t+\frac{2\pi}{\omega} \right) &= \alpha\cos(\omega t + 2\pi) + \beta\sin(\omega t + 2\pi)\\
-&= \alpha\cos(\omega t) + \beta\sin(\omega t) = x(t)
-\end{align*}
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+ATTR_REVEAL: :frag (none appear appear appear appear) :frag_idx (- 2 3 4 5)
+- \(x(t) = \alpha \cos(\omega t) + \beta \sin(\omega t)\)
+- \(x \left( t + \frac{2\pi}{\omega} \right) = \alpha \cos \left[\omega \left( t + \frac{2\pi}{\omega} \right) \right]+ \beta \sin\left[\omega \left( t + \frac{2\pi}{\omega} \right) \right]\)
+- \(x \left( t + \frac{2\pi}{\omega} \right) = \alpha \cos \left(\omega t + 2\pi \right)+ \beta \sin\left(\omega t + 2\pi \right)\)
+- \(x \left( t + \frac{2\pi}{\omega} \right) = \alpha \cos \left(\omega t \right)+ \beta \sin\left(\omega t\right)\)
+- \(x \left( t + \frac{2\pi}{\omega} \right) = x(t)\)
 
-\(T\equiv \frac{2\pi}{\omega}\) é chamado de *período de oscilação*, e é
-o tempo que a massa leva entre chegar na mesma posição com mesma velocidade.
+** Período
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+ATTR_REVEAL: :frag (none none) :frag_idx (- 2)
+- \(x(t) = \alpha \cos(\omega t) + \beta \sin(\omega t)\)
+- \(T\equiv \frac{2\pi}{\omega}\) é chamado de *período de oscilação*, e é o tempo que a massa leva entre chegar na mesma posição com mesma velocidade.
 
 **  
 :PROPERTIES:
