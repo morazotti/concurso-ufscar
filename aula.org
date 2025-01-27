@@ -247,44 +247,22 @@ iniciais*. Segunda ordem \(\leftrightarrow\) duas condições.
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
-
-\(x(t) = \alpha \cos(\omega t) + \beta \sin(\omega t)\)
+#+ATTR_REVEAL: :frag (none none appear appear) :frag_idx (- - 3 4)
+- Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
+- \(x(t) = \alpha \cos(\omega t) + \beta \sin(\omega t)\)
+- \(x(0) = \alpha \cos(0) + \beta \sin(0)\)
+- \(x_0 = \alpha\)
 ** Constantes arbitrárias
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
+#+ATTR_REVEAL: :frag (none none appear appear appear) :frag_idx (- - 3 4 5)
+- Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
+- \(x(t) = x_0 \cos(\omega t) + \beta \sin(\omega t)\)
+- \(\dot{x}(t) = -x_0\omega \sin(\omega t) + \beta\omega \cos(\omega t)\)
+- \(\dot{x}(0) = -x_0\omega \sin(0) + \beta\omega \cos(0)\)
+- \(v_0 = \beta\omega\)
 
-\(x(0) = \alpha \cos(\omega 0) + \beta \sin(\omega 0)\)
-** Constantes arbitrárias
-:PROPERTIES:
-:REVEAL_EXTRA_ATTR: data-auto-animate
-:END:
-Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
-
-\(x_0 = \alpha \)
-** Constantes arbitrárias
-:PROPERTIES:
-:REVEAL_EXTRA_ATTR: data-auto-animate
-:END:
-Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
-
-\(\dot{x}(t) = -\omega \alpha \sin(\omega t) + \omega \beta \cos(\omega t)\)
-** Constantes arbitrárias
-:PROPERTIES:
-:REVEAL_EXTRA_ATTR: data-auto-animate
-:END:
-Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
-
-\(\dot{x}(0) = -\omega \alpha \sin(\omega 0) + \omega \beta \cos(\omega 0)\)
-** Constantes arbitrárias
-:PROPERTIES:
-:REVEAL_EXTRA_ATTR: data-auto-animate
-:END:
-Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
-
-\(v_0 = \omega \beta\)
 ** \(x(t) = x_0 \cos(\omega t) + \frac{v_0}{\omega}\sin(\omega t)\)
 * Expressão alternativa
 ** Amplitude e Fase
@@ -293,19 +271,25 @@ Sejam \(x(0) = x_0\), \(\dot{x}(0) = v_0\).
 :END:
 Há uma maneira mais instrutiva e compacta de escrever a solução.
 
-\(x(t) = \alpha  \cos(\omega t) + \beta  \sin(\omega t)\)
+#+ATTR_REVEAL: :frag (none) :frag_idx (-)
+- \(x(t) = \alpha  \cos(\omega t) + \beta  \sin(\omega t)\)
 ** Amplitude e Fase
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-\(x(t) = \alpha  \cos(\omega t) + \beta  \sin(\omega t)\)
+#+ATTR_REVEAL: :frag (none appear appear appear) :frag_idx (- 2 3 4 5)
+- \(x(t) = \alpha  \cos(\omega t) + \beta  \sin(\omega t)\)
+- \(x(t) = \frac{\sqrt{\alpha ^2+\beta ^2}}{\sqrt{\alpha ^2+\beta ^2}}\cdot\left[ \alpha  \cos(\omega t) + \beta \sin(\omega t) \right]\)
+- \(x(t) = \sqrt{\alpha ^2+\beta ^2} \left[ \frac{\alpha}{\sqrt{\alpha^2+\beta^2}} \cos(\omega t) + \frac{\beta}{\sqrt{\alpha ^2+\beta ^2}} \sin(\omega t) \right]\)
 ** Amplitude e Fase
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-
-\(x(t) = \frac{\sqrt{\alpha ^2+\beta ^2}}{\sqrt{\alpha ^2+\beta ^2}}\cdot\left[ \alpha  \cos(\omega t) + \beta \sin(\omega t) \right]\)
-
+#+ATTR_REVEAL: :frag (none none appear appear) :frag_idx (- 2 3 4)
+- \(x(t) = \sqrt{\alpha ^2+\beta ^2} \left[ \frac{\alpha}{\sqrt{\alpha^2+\beta^2}} \cos(\omega t) + \frac{\beta}{\sqrt{\alpha ^2+\beta ^2}} \sin(\omega t) \right]\)
+- \(A \equiv \sqrt{\alpha ^2+\beta ^2}\)
+- \(x(t) = A \left[ \frac{\alpha}{A} \cos(\omega t) + \frac{\beta}{A} \sin(\omega t) \right]\)
+- \(\left( \frac{\alpha}{A} \right)^2 + \left( \frac{\beta}{A} \right)^2 = \frac{\alpha^2 + \beta^2}{A^2} \equiv 1\)
 ** COMMENT Amplitude e Fase
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
@@ -313,14 +297,14 @@ Há uma maneira mais instrutiva e compacta de escrever a solução.
 
 \(x(t) = \sqrt{\alpha ^2+\beta ^2} \left[ \frac{\alpha}{\sqrt{\alpha^2+\beta^2}} \cos(\omega t) + \frac{\beta}{\sqrt{\alpha ^2+\beta ^2}} \sin(\omega t) \right]\)
 
-** Amplitude e Fase
+** COMMENT Amplitude e Fase
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 
 \(x(t) = \underbrace{\sqrt{\alpha ^2+\beta ^2}}_{\equiv A} \left[ \frac{\alpha}{\sqrt{\alpha^2+\beta^2}} \cos(\omega t) + \frac{\beta}{\sqrt{\alpha ^2+\beta ^2}} \sin(\omega t) \right]\)
 
-** Amplitude e Fase
+** COMMENT Amplitude e Fase
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
@@ -331,21 +315,25 @@ Há uma maneira mais instrutiva e compacta de escrever a solução.
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-
-\(x(t) = A \left[ \frac{\alpha}{A} \cos(\omega t) + \frac{\beta}{A} \sin(\omega t) \right]\)
-
-\(\left( \frac{\alpha}{A} \right)^2 + \left( \frac{\beta}{A} \right)^2
-= \frac{\alpha^2 + \beta^2}{A^2} \equiv 1\)
-
-\(\frac{\alpha}{A} = \cos(\varphi),\frac{\beta}{A} = -\sin(\varphi)\)
+#+ATTR_REVEAL: :frag (none none appear appear) :frag_idx (- 2 3 4)
+- \(x(t) = A \left[ \frac{\alpha}{A} \cos(\omega t) + \frac{\beta}{A} \sin(\omega t) \right]\)
+- \(\left( \frac{\alpha}{A} \right)^2 + \left( \frac{\beta}{A} \right)^2 = \frac{\alpha^2 + \beta^2}{A^2} \equiv 1\)
+- \(\frac{\alpha}{A} = \cos(\varphi),\frac{\beta}{A} = -\sin(\varphi)\)
+** COMMENT Amplitude e Fase
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+ATTR_REVEAL: :frag (none appear appear) :frag_idx (- 2 3)
+- \(x(t) = A \left[ \frac{\alpha}{A} \cos(\omega t) + \frac{\beta}{A} \sin(\omega t) \right]\)
+- \(\frac{\alpha}{A} = \cos(\varphi),\frac{\beta}{A} = -\sin(\varphi)\)
 ** Amplitude e Fase
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-
-\(x(t) = A \left[ \cos(\varphi) \cos(\omega t) - \sin(\varphi) \sin(\omega t) \right]\)
-
-** Amplitude e Fase
+#+ATTR_REVEAL: :frag (none appear) :frag_idx (- 2)
+- \(x(t) = A \left[ \cos(\varphi) \cos(\omega t) - \sin(\varphi) \sin(\omega t) \right]\)
+- \(x(t) = A \cos(\omega t + \varphi)\)
+** COMMENT Amplitude e Fase
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
