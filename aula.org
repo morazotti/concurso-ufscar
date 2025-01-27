@@ -375,69 +375,48 @@ cossenoidal começa em comparação a uma mola distendida de \(A\).
 
 * Energia do sistema
 
-** \(x(t) = A\cos(\omega t + \varphi)\)
+** Energia
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 Podemos calcular a energia do sistema como
+#+ATTR_REVEAL: :frag (none) :frag_idx (-)
+- \(E = \frac{m\dot{x}^2}{2} + \frac{kx^2}{2}\)
 
-\begin{align*}
-E = \frac{m\dot{x}^2}{2} + \frac{kx^2}{2}
-\end{align*}
-
-** \(x(t) = A\cos(\omega t + \varphi)\)
+** Energia
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-Podemos calcular a energia do sistema como
-
-\begin{align*}
-\omega^2 &= \frac{k}{m} \implies k = m\omega^2\\
-E &= \frac{m\dot{x}^2}{2} + \frac{m\omega^2x^2}{2}
-\end{align*}
-** \(x(t) = A\cos(\omega t + \varphi)\)
+#+ATTR_REVEAL: :frag (none none appear) :frag_idx (- - 3)
+- \(E = \frac{m\dot{x}^2}{2} + \frac{kx^2}{2}\)
+- \(\omega^2 = \frac{k}{m} \implies k = m\omega^2\)
+- \(E = \frac{m\dot{x}^2}{2} + \frac{m\omega^2x^2}{2}\)
+  
+** Energia
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-Podemos calcular a energia do sistema como
-
-\begin{align*}
-E &= \frac{m\dot{x}^2}{2} + \frac{m\omega^2x^2}{2}\\
-\dot{x}(t) &= -A\omega\sin(\omega t + \varphi)
-\end{align*}
-** \(x(t) = A\cos(\omega t + \varphi)\)
+#+ATTR_REVEAL: :frag (none appear appear appear) :frag_idx (- 2 3 4)
+- \(E = \frac{m\dot{x}^2}{2} + \frac{m\omega^2x^2}{2}\)
+- \(x(t) = A\cos(\omega t + \varphi)\)
+- \(\dot{x}(t) = -\omega A\sin(\omega t + \varphi)\)
+- \(E = \frac{m}{2}[-A\omega\sin(\omega t+\varphi)]^2 + \frac{m\omega^2}{2}[A\cos(\omega t + \varphi)]^2\)
+** Energia
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-Podemos calcular a energia do sistema como
-
-\(E = \frac{m}{2}[-A\omega\sin(\omega t+\varphi)]^2 +
-\frac{m\omega^2}{2}[A\cos(\omega t + \varphi)]^2\)
-** \(x(t) = A\cos(\omega t + \varphi)\)
+#+ATTR_REVEAL: :frag (none appear appear) :frag_idx (- 2 3)
+- \(E = \frac{m}{2}[-A\omega\sin(\omega t+\varphi)]^2 + \frac{m\omega^2}{2}[A\cos(\omega t + \varphi)]^2\)
+- \(E = \frac{m\omega^2A^2}{2} [\sin^2(\omega t+\varphi) + \cos^2(\omega t + \varphi)]\)
+- \(E = \frac{m\omega^2A^2}{2}\)
+** Energia
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-Podemos calcular a energia do sistema como
-\begin{align*}
-E = \frac{m\omega^2A^2}{2} [\sin^2(\omega t+\varphi) + \cos^2(\omega t + \varphi)]
-\end{align*}
-** \(x(t) = A\cos(\omega t + \varphi)\)
-:PROPERTIES:
-:REVEAL_EXTRA_ATTR: data-auto-animate
-:END:
-Podemos calcular a energia do sistema como
-\begin{align*}
-E = \frac{m\omega^2A^2}{2}.
-\end{align*}
-** \(E = \frac{m\omega^2A^2}{2}\)
-:PROPERTIES:
-:REVEAL_EXTRA_ATTR: data-auto-animate
-:END:
-Como \(A^2 = x_0^2 + \frac{v_0^2}{\omega^2}\), concluímos que
-\begin{align*}
-E = \frac{mv_0^2}{2}+ \frac{m\omega^2x_0^2}{2}
-\end{align*}
-\(\implies\) a energia se conserva.
+#+ATTR_REVEAL: :frag (none appear appear) :frag_idx (- 2 3)
+- \(E = \frac{m\omega^2A^2}{2}\)
+- \(A^2 = x_0^2 + \frac{v_0^2}{\omega^2} \implies E = \frac{mv_0^2}{2}+ \frac{m\omega^2x_0^2}{2} \)
+- A energia se conserva.
 
 ** Energia do oscilador harmônico
 :PROPERTIES:
@@ -461,49 +440,49 @@ E = \frac{mv_0^2}{2}+ \frac{m\omega^2x_0^2}{2}
 :END:
 #+attr_html: :width 600
 [[file:img/pendulum.png]]
+** Pêndulo inextensível
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 600
+[[file:img/pendulum_forces.png]]
 
 ** Pêndulo inextensível
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-A tensão equilibra a componente radial da força:
-\begin{align*}
-T = mg\cos\theta
-\end{align*}
+#+attr_html: :width 300
+[[file:img/pendulum_forces.png]]
+#+ATTR_REVEAL: :frag (none appear appear) :frag_idx (- 2 3)
+- A tensão equilibra a componente radial: \(T = mg\cos\theta\)
+- A força resultante é a componente perpendicular: \(ma = -mg\sin\theta\)
 ** Pêndulo inextensível
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-A componente perpendicular é a força resultante:
-
-\begin{align*}
-ma = -mg\sin\theta
-\end{align*}
-
+#+ATTR_REVEAL: :frag (none appear appear) :frag_idx (- 2 3)
+- \(ma = -mg\sin\theta\)
+- Aceleração linear perpendicular: \(m\ell\ddot{\theta} = -mg\sin\theta\)
+- \(\ddot{\theta} + \frac{g}{\ell}\sin\theta = 0\)
 ** Pêndulo inextensível
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-A componente perpendicular é a força resultante:
-
-\begin{align*}
-m\ell\ddot{\theta} = -mg\sin\theta
-\end{align*}
-
-** Pêndulo inextensível
-:PROPERTIES:
-:REVEAL_EXTRA_ATTR: data-auto-animate
-:END:
-Para pequenos ângulos, \(\sin\theta\approx\theta\)
-#+begin_framed
-\begin{align*}
-\ddot{\theta} + \frac{g}{\ell}\theta = 0
-\end{align*}
-#+end_framed
-Equivalente a
-\begin{align*}
-\ddot{x} + \frac{k}{m}x = 0
-\end{align*}
+#+ATTR_REVEAL: :frag (none appear appear appear) :frag_idx (- 2 3 4)
+- \(\ddot{\theta} + \frac{g}{\ell}\sin\theta = 0\)
+- Para pequenos ângulos, \(\sin\theta\approx\theta\)
+- \(\ddot{\theta} + \frac{g}{\ell}\theta = 0\)
+- Mesma equação do massa-mola: \(\ddot{x} + \frac{k}{m}x = 0\)
+# Para pequenos ângulos, \(\sin\theta\approx\theta\)
+# #+begin_framed
+# \begin{align*}
+# \ddot{\theta} + \frac{g}{\ell}\theta = 0
+# \end{align*}
+# #+end_framed
+# Equivalente a
+# \begin{align*}
+# \ddot{x} + \frac{k}{m}x = 0
+# \end{align*}
 
 ** Pêndulo inextensível
 :PROPERTIES:

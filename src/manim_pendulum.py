@@ -75,7 +75,7 @@ class DoublePendulumComparison(Scene):
         omega1 = 0  # Initial angular velocity for pendulum 1
         omega2 = 0  # Initial angular velocity for pendulum 2
         dt = 0.05  # Time step
-        t_max = 4   # Total simulation time
+        t_max = 16   # Total simulation time
 
         # Set background to transparent
         self.camera.background_color = "#fdf6e3"
@@ -85,8 +85,8 @@ class DoublePendulumComparison(Scene):
         self.add(ceiling)
 
         # Pivot points (attached to the ceiling)
-        pivot1 = ceiling.get_center() + LEFT * 1.8
-        pivot2 = ceiling.get_center() + RIGHT * 1.8
+        pivot1 = ceiling.get_center() + LEFT * 2
+        pivot2 = ceiling.get_center() + RIGHT * 2
 
         # Pendulum 1 setup (exact)
         pendulum1 = Line(pivot1, pivot1 + L * DOWN, color="#586e75")  # Pendulum rod with custom color
@@ -133,7 +133,7 @@ class DoublePendulumComparison(Scene):
             bob.move_to(new_end)
 
         # Animate the pendula in a loop
-        for _ in range(2):  # Loop 2 times (you can adjust this or remove the loop for infinite animation)
+        for _ in range(1):  # Loop 2 times (you can adjust this or remove the loop for infinite animation)
             self.play(
                 UpdateFromFunc(
                     VGroup(pendulum1, bob1),
@@ -157,6 +157,3 @@ class DoublePendulumComparison(Scene):
             pendulum2.put_start_and_end_on(pivot2, new_end2)
             bob1.move_to(new_end1)
             bob2.move_to(new_end2)
-
-        # Hold the final frame
-        self.wait(2)
