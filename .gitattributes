@@ -1,0 +1,2 @@
+src/media/videos/manim_pendulum/1080p60/DoublePendulumComparison.mp4 filter=lfs diff=lfs merge=lfs -text
+src/media/videos/manim_pendulum/1080p60/OscillatingPendulum.mp4 filter=lfs diff=lfs merge=lfs -text
