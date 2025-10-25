@@ -25,14 +25,13 @@
 #+REVEAL_EXTRA_CSS: custom.css
 #+REVEAL_EXTRA_SCRIPT_SRC: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 :END:
-
-* Exemplos
+* Exemplo
 ** Relógio de pêndulo
 \(T=2\pi \sqrt{\frac{\ell}{g}}\)
 #+begin_export html
 <section>
   <video controls width="1080" height="360">
-    <source src="src/media/videos/manim_pendulum/1080p60/OscillatingPendulum.mp4" type="video/mp4">
+    <source src="https://media.githubusercontent.com/media/morazotti/concurso-ufscar/master/src/media/videos/manim_pendulum/1080p60/OscillatingPendulum.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </section>
@@ -525,7 +524,7 @@ Solução exata diferere para ângulos grandes!
 #+begin_export html
 <section>
   <video controls width="1080" height="360">
-    <source src="src/media/videos/manim_pendulum/1080p60/DoublePendulumComparison.mp4" type="video/mp4">
+    <source src="https://media.githubusercontent.com/media/morazotti/concurso-ufscar/master/src/media/videos/manim_pendulum/1080p60/DoublePendulumComparison.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </section>
