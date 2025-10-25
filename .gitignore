@@ -6,7 +6,7 @@ dist/
 wheels/
 *.egg-info
 src/auto
-src/media
+# src/media
 src/*.pdf
 # Virtual environments
 .venv
