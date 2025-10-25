@@ -31,7 +31,7 @@
 #+begin_export html
 <section>
   <video controls width="1080" height="360">
-    <source src="https://media.githubusercontent.com/media/morazotti/concurso-ufscar/master/src/media/videos/manim_pendulum/1080p60/OscillatingPendulum.mp4" type="video/mp4">
+    <source src="https://github.com/morazotti/concurso-ufscar/blob/master/src/media/videos/manim_pendulum/1080p60/OscillatingPendulum.mp4?raw=true" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </section>
@@ -524,7 +524,7 @@ Solução exata diferere para ângulos grandes!
 #+begin_export html
 <section>
   <video controls width="1080" height="360">
-    <source src="https://media.githubusercontent.com/media/morazotti/concurso-ufscar/master/src/media/videos/manim_pendulum/1080p60/DoublePendulumComparison.mp4" type="video/mp4">
+    <source src="https://github.com/morazotti/concurso-ufscar/blob/master/src/media/videos/manim_pendulum/1080p60/DoublePendulumComparison.mp4?raw=true" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </section>
